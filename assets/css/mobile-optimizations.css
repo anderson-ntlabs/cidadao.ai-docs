@@ -77,23 +77,27 @@ button:active, a:active, .btn:active {
     }
     
     .navbar-container {
-        flex-wrap: wrap;
-        gap: 0.5rem;
+        display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        width: 100%;
     }
     
     /* Mobile hamburger toggle */
     .mobile-menu-toggle {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         gap: 4px;
-        background: none;
-        border: none;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-light);
         cursor: pointer;
         padding: 0.5rem;
-        border-radius: 6px;
+        border-radius: 8px;
         transition: all 0.3s ease;
+        margin-left: auto;
+        z-index: 1001;
+        position: relative;
         order: 2;
     }
     
@@ -125,6 +129,7 @@ button:active, a:active, .btn:active {
     /* Simplified logo for mobile */
     .logo {
         gap: 0.5rem;
+        flex: 1;
     }
     
     .logo-icon {
@@ -137,30 +142,31 @@ button:active, a:active, .btn:active {
         font-size: clamp(1rem, 4vw, 1.25rem);
     }
     
-    /* Mobile navigation controls */
+    /* Hide all navigation controls by default on mobile */
     .nav-controls {
-        position: absolute;
-        top: 100%;
+        display: none !important;
+    }
+    
+    /* Show controls when menu is open */
+    .nav-controls.mobile-open {
+        position: fixed;
+        top: 70px;
         left: 0;
         right: 0;
         width: 100%;
-        display: none;
+        height: calc(100vh - 70px);
+        display: flex !important;
         flex-direction: column;
-        gap: 0.75rem;
-        margin-top: 0.5rem;
-        padding: 1.5rem 1rem;
+        gap: 0;
+        padding: 0;
         background: var(--bg-primary);
-        border-radius: 0 0 12px 12px;
-        border: 1px solid var(--border);
-        border-top: none;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         z-index: 999;
-    }
-    
-    .nav-controls.mobile-open {
-        display: flex;
+        overflow-y: auto;
         animation: slideDown 0.3s ease;
     }
+    
     
     .control-group {
         display: flex;
@@ -201,64 +207,88 @@ button:active, a:active, .btn:active {
     }
     
     /* Navigation buttons in mobile menu */
-    .nav-action-btn {
+    .nav-controls.mobile-open > *,
+    .nav-controls.mobile-open .theme-lang-group > * {
         width: 100%;
-        padding: 0.875rem 1rem;
-        justify-content: center;
-        font-size: 0.9375rem;
-        border-radius: 8px;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-light);
-    }
-    
-    .nav-action-btn:hover {
-        background: var(--bg-hover);
-        border-color: var(--text-accent);
-    }
-    
-    /* Dynamic control buttons in mobile */
-    .dynamic-control-btn {
-        padding: 0.75rem;
-        min-width: auto;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    /* Theme and language controls group */
-    .theme-lang-group {
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-    }
-    
-    .theme-toggle-btn,
-    .lang-toggle-btn {
-        flex: 1;
-    }
-    
-    /* Mobile-friendly manifesto button */
-    .nav-manifesto-btn {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-        color: white;
+        padding: 1rem 1.5rem;
+        margin: 0;
         border: none;
-        border-radius: 8px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 0;
+        background: transparent;
+        text-align: left;
+        justify-content: flex-start;
+        font-size: 1rem;
+        transition: background 0.2s ease;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        min-height: 44px;
-        margin-bottom: 0.5rem;
+        gap: 0.75rem;
     }
     
-    .nav-manifesto-btn:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    .nav-controls.mobile-open > *:hover,
+    .nav-controls.mobile-open .theme-lang-group > *:hover {
+        background: var(--bg-hover);
+    }
+    
+    .nav-controls.mobile-open > *:active,
+    .nav-controls.mobile-open .theme-lang-group > *:active {
+        background: var(--bg-secondary);
+    }
+    
+    /* Hide theme-lang-group wrapper, show buttons as list items */
+    .theme-lang-group {
+        display: contents;
+    }
+    
+    /* Style all buttons equally in mobile menu */
+    .nav-action-btn,
+    .dynamic-control-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-height: 56px;
+    }
+    
+    /* Add icons to theme/lang buttons for clarity */
+    .theme-toggle-btn .btn-icon,
+    .lang-toggle-btn .btn-flag {
+        font-size: 1.2rem;
+    }
+    
+    .theme-toggle-btn .btn-text,
+    .lang-toggle-btn .btn-text {
+        font-size: 1rem;
+    }
+    
+    /* Show theme text only inside mobile menu */
+    .mobile-only-text {
+        display: none;
+    }
+    
+    .nav-controls.mobile-open .mobile-only-text {
+        display: inline;
+    }
+    
+    /* Hide all nav action buttons on desktop view in mobile */
+    .nav-action-btn,
+    .dynamic-control-btn {
+        display: none !important;
+    }
+    
+    /* Show buttons only inside open mobile menu */
+    .nav-controls.mobile-open .nav-action-btn,
+    .nav-controls.mobile-open .dynamic-control-btn {
+        display: flex !important;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid var(--border-light);
+        border-radius: 0;
+        background: transparent;
+        text-align: left;
+        justify-content: flex-start;
+        font-size: 1rem;
     }
 }
 

@@ -47,6 +47,11 @@
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Mobile Menu Toggle - Hidden by default */
+.mobile-menu-toggle {
+    display: none;
+}
+
 /* ===== ACCESSIBILITY STYLES ===== */
 /* Skip Navigation Link */
 .skip-link {
@@ -432,6 +437,14 @@ body::before {
 /* Mobile menu toggle - hidden on desktop */
 .mobile-menu-toggle {
     display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 /* ===== HERO SECTION ===== */

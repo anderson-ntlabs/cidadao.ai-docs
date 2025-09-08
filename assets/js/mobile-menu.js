@@ -448,15 +448,19 @@ document.addEventListener('DOMContentLoaded', () => {
     style.textContent = `
         .mobile-menu-open {
             overflow: hidden;
+            position: fixed;
+            width: 100%;
         }
         
+        /* Hide mobile menu toggle by default */
         .mobile-menu-toggle {
-            display: none;
+            display: none !important;
         }
         
+        /* Show mobile menu toggle only on mobile */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
-                display: flex;
+                display: flex !important;
             }
         }
     `;
