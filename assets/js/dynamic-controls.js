@@ -92,12 +92,12 @@ class DynamicControls {
         if (this.currentTheme === 'light') {
             // Mostra opção para mudar para escuro
             icon.textContent = '🌙';
-            text.textContent = 'Escuro';
+            if (text) text.textContent = 'Escuro';
             this.themeButton.setAttribute('aria-label', 'Ativar tema escuro');
         } else {
             // Mostra opção para mudar para claro
             icon.textContent = '☀️';
-            text.textContent = 'Claro';
+            if (text) text.textContent = 'Claro';
             this.themeButton.setAttribute('aria-label', 'Ativar tema claro');
         }
     }
