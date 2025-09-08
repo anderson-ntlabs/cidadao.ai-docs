@@ -340,15 +340,17 @@ body::before {
 /* Dynamic Control Buttons - Extended nav-action-btn base */
 .dynamic-control-btn {
     /* Base nav-action-btn styles */
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border-radius: 8px;
     font-weight: 500;
     font-size: 0.875rem;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     border: 1px solid transparent;
+    min-width: auto;
     cursor: pointer;
     text-decoration: none;
     min-height: 36px;
@@ -402,7 +404,8 @@ body::before {
     }
     
     .dynamic-control-btn {
-        min-width: 75px;
+        padding: 0.4rem;
+        min-width: auto;
     }
     
     .nav-controls {

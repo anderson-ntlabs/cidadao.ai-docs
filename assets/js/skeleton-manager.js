@@ -73,16 +73,15 @@ class SkeletonManager {
         
         carouselSection.insertAdjacentHTML('afterbegin', skeletonHTML);
         
-        // Ocultar conteúdo real inicialmente
-        const realContent = carouselSection.children[1]; // Próximo elemento após skeleton
-        if (realContent) {
-            realContent.style.opacity = '0';
-            realContent.style.pointerEvents = 'none';
+        // Ocultar todo o conteúdo real do carrossel
+        const realCarousel = carouselSection.querySelector('.agents-carousel');
+        if (realCarousel) {
+            realCarousel.style.display = 'none';
         }
         
         this.skeletonStates.set('carousel', {
             skeleton: document.getElementById('carousel-skeleton'),
-            content: realContent,
+            content: realCarousel,
             startTime: Date.now(),
             ready: false
         });
@@ -268,9 +267,12 @@ class SkeletonManager {
                 });
             } else {
                 // Elemento único
-                state.content.style.opacity = '1';
-                state.content.style.pointerEvents = 'auto';
-                state.content.style.transition = 'opacity 0.5s ease';
+                state.content.style.display = '';
+                setTimeout(() => {
+                    state.content.style.opacity = '1';
+                    state.content.style.pointerEvents = 'auto';
+                    state.content.style.transition = 'opacity 0.5s ease';
+                }, 50);
             }
         }
         
