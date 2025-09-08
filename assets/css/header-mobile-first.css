@@ -37,6 +37,24 @@ body {
 }
 
 /* ===== MOBILE-FIRST BASE (0-767px) ===== */
+@media (max-width: 767px) {
+    .navbar-container {
+        padding: 0 0.75rem;
+    }
+    
+    /* Show only logo and hamburger on mobile */
+    .nav-actions,
+    .nav-controls {
+        display: none;
+    }
+    
+    /* Show them inside the mobile menu */
+    .nav-menu[aria-hidden="false"] .nav-actions,
+    .nav-menu[aria-hidden="false"] .nav-controls {
+        display: block;
+    }
+}
+
 /* Header Container */
 .site-header {
     position: fixed;
@@ -68,6 +86,7 @@ body {
     padding: 0 var(--header-padding);
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 /* Logo */
@@ -206,7 +225,7 @@ body.menu-open {
 /* Navigation Actions */
 .nav-actions {
     padding: 1rem 0;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light, #e5e7eb);
 }
 
 /* Navigation Links */
@@ -284,19 +303,18 @@ body.menu-open {
 }
 
 /* Theme Toggle Icons */
-.theme-icon-light { display: none; }
-.theme-icon-dark { display: inline; }
+.theme-icon-light { display: inline-block; }
+.theme-icon-dark { display: none; }
 
-[data-theme="light"] .theme-icon-light { display: inline; }
-[data-theme="light"] .theme-icon-dark { display: none; }
+[data-theme="dark"] .theme-icon-light { display: none; }
+[data-theme="dark"] .theme-icon-dark { display: inline-block; }
 
 /* Language Toggle Icons */
-.lang-flag-pt { display: inline; }
+.lang-flag-pt { display: inline-block; }
 .lang-flag-en { display: none; }
 
 [data-language="en-US"] .lang-flag-pt { display: none; }
-[data-language="en-US"] .lang-flag-en { display: inline; }
-[data-language="en-US"] .lang-text { content: "EN"; }
+[data-language="en-US"] .lang-flag-en { display: inline-block; }
 
 /* ===== TABLET STYLES (768px+) ===== */
 @media (min-width: 768px) {
