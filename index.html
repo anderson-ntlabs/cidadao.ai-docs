@@ -256,8 +256,8 @@
             <!-- Controles -->
             <div class="nav-controls">
                 <!-- Vamos Conversar -->
-                <a href="https://andersonhenrique.youcanbook.me/" target="_blank" rel="noopener" class="nav-action-btn nav-schedule-btn" aria-label="Agendar reunião com Anderson">
-                    📅 Vamos Conversar
+                <a href="https://andersonhenrique.youcanbook.me/" target="_blank" rel="noopener" class="nav-action-btn nav-schedule-btn" data-i18n="nav.schedule" aria-label="Agendar reunião com Anderson">
+                    📅 <span data-i18n="nav.schedule">Vamos Conversar</span>
                 </a>
                 
                 <!-- Manifesto -->
@@ -265,16 +265,19 @@
                     📜 Manifesto
                 </button>
                 
-                <!-- Tema -->
-                <button class="dynamic-control-btn theme-toggle-btn" id="themeToggle" aria-label="Alternar tema">
-                    <span class="btn-icon">🌙</span>
-                </button>
-                
-                <!-- Idioma -->
-                <button class="dynamic-control-btn lang-toggle-btn" id="langToggle" aria-label="Alternar idioma">
-                    <span class="btn-flag">🇺🇸</span>
-                    <span class="btn-text">EN</span>
-                </button>
+                <!-- Theme and Language Group for Mobile -->
+                <div class="theme-lang-group">
+                    <!-- Tema -->
+                    <button class="dynamic-control-btn theme-toggle-btn" id="themeToggle" aria-label="Alternar tema">
+                        <span class="btn-icon">🌙</span>
+                    </button>
+                    
+                    <!-- Idioma -->
+                    <button class="dynamic-control-btn lang-toggle-btn" id="langToggle" aria-label="Alternar idioma">
+                        <span class="btn-flag">🇺🇸</span>
+                        <span class="btn-text">EN</span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>

@@ -270,6 +270,13 @@ body::before {
     gap: 1rem;
 }
 
+/* Theme and language group - desktop layout */
+.theme-lang-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 
 /* Nav Action Buttons (Base Style) */
 .nav-action-btn {
@@ -420,6 +427,11 @@ body::before {
     .nav-action-btn {
         order: 1;
     }
+}
+
+/* Mobile menu toggle - hidden on desktop */
+.mobile-menu-toggle {
+    display: none;
 }
 
 /* ===== HERO SECTION ===== */
