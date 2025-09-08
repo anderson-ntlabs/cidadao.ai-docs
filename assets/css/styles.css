@@ -217,6 +217,8 @@ body::before {
 }
 
 /* ===== NAVEGAÇÃO ===== */
+/* OLD NAVBAR STYLES - Commented out, replaced by header-mobile-first.css */
+/*
 .navbar {
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border);
@@ -227,6 +229,7 @@ body::before {
     backdrop-filter: blur(8px);
     background-color: rgba(255, 255, 255, 0.9);
 }
+*/
 
 [data-theme="dark"] .navbar {
     background-color: rgba(15, 23, 42, 0.9);

@@ -76,6 +76,7 @@
     
     <!-- Styles - Preserving original CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/header-mobile-first.css">
     <link rel="stylesheet" href="assets/css/carousel.css">
     <link rel="stylesheet" href="assets/css/mobile-optimizations.css">
     <!-- <link rel="stylesheet" href="assets/css/skeleton-loading.css"> -->
@@ -237,51 +238,87 @@
     <!-- Skip Navigation Link -->
     <a href="#main-content" class="skip-link" data-i18n="accessibility.skip">Pular para o conteúdo principal</a>
     
-    <!-- Navegação Principal -->
-    <nav class="navbar" role="navigation" aria-label="Navegação principal">
-        <div class="navbar-container">
-            <!-- Logo -->
-            <a href="#" class="logo" aria-label="Cidadão.AI - Página inicial">
-                <div class="logo-icon">🏛️</div>
-                <span class="logo-text">Cidadão.AI</span>
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-label="Alternar menu de navegação" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <!-- Controles -->
-            <div class="nav-controls">
-                <!-- Vamos Conversar -->
-                <a href="https://andersonhenrique.youcanbook.me/" target="_blank" rel="noopener" class="nav-action-btn nav-schedule-btn" data-i18n="nav.schedule" aria-label="Agendar reunião com Anderson">
-                    📅 <span data-i18n="nav.schedule">Vamos Conversar</span>
+    <!-- Header Mobile-First -->
+    <header class="site-header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegação principal">
+            <div class="navbar-container">
+                <!-- Logo -->
+                <a href="#" class="logo" aria-label="Cidadão.AI - Página inicial">
+                    <span class="logo-icon">🏛️</span>
+                    <span class="logo-text">Cidadão.AI</span>
                 </a>
                 
-                <!-- Manifesto -->
-                <button class="nav-action-btn nav-manifesto-btn" data-modal-open="manifestoModal" data-i18n="nav.manifesto" aria-label="Manifesto Cidadão.AI">
-                    📜 Manifesto
+                <!-- Mobile Menu Toggle -->
+                <button 
+                    class="menu-toggle" 
+                    aria-label="Menu"
+                    aria-expanded="false"
+                    aria-controls="main-menu"
+                    type="button"
+                >
+                    <span class="hamburger">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
                 </button>
                 
-                <!-- Theme and Language Group for Mobile -->
-                <div class="theme-lang-group">
-                    <!-- Tema -->
-                    <button class="dynamic-control-btn theme-toggle-btn" id="themeToggle" aria-label="Alternar tema">
-                        <span class="btn-icon">🌙</span>
-                        <span class="btn-text mobile-only-text" data-i18n="nav.theme.dark">Tema Escuro</span>
-                    </button>
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="main-menu" aria-hidden="true">
+                    <!-- Action Buttons -->
+                    <div class="nav-actions">
+                        <a 
+                            href="https://andersonhenrique.youcanbook.me/" 
+                            target="_blank" 
+                            rel="noopener" 
+                            class="nav-link nav-schedule" 
+                            data-i18n="nav.schedule"
+                        >
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-text" data-i18n="nav.schedule">Vamos Conversar</span>
+                        </a>
+                        
+                        <button 
+                            class="nav-link nav-manifesto" 
+                            data-modal-open="manifestoModal" 
+                            data-i18n="nav.manifesto"
+                            type="button"
+                        >
+                            <span class="nav-icon">📜</span>
+                            <span class="nav-text" data-i18n="nav.manifesto">Manifesto</span>
+                        </button>
+                    </div>
                     
-                    <!-- Idioma -->
-                    <button class="dynamic-control-btn lang-toggle-btn" id="langToggle" aria-label="Alternar idioma">
-                        <span class="btn-flag">🇺🇸</span>
-                        <span class="btn-text" data-i18n="nav.lang.en">English</span>
-                    </button>
+                    <!-- Controls -->
+                    <div class="nav-controls">
+                        <!-- Theme Toggle -->
+                        <button 
+                            class="control-btn theme-toggle" 
+                            id="themeToggle" 
+                            aria-label="Alternar tema"
+                            type="button"
+                        >
+                            <span class="control-icon theme-icon-light">☀️</span>
+                            <span class="control-icon theme-icon-dark">🌙</span>
+                            <span class="control-text" data-i18n="nav.theme">Tema</span>
+                        </button>
+                        
+                        <!-- Language Toggle -->
+                        <button 
+                            class="control-btn lang-toggle" 
+                            id="langToggle" 
+                            aria-label="Alternar idioma"
+                            type="button"
+                        >
+                            <span class="control-icon lang-flag-pt">🇧🇷</span>
+                            <span class="control-icon lang-flag-en">🇺🇸</span>
+                            <span class="control-text lang-text">PT</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Conteúdo Principal -->
     <main id="main-content" role="main">
@@ -925,8 +962,9 @@
     <script src="assets/js/performance-optimizer.js"></script>
     <script src="assets/js/smart-image-loader.js"></script>
     <!-- <script src="assets/js/skeleton-manager.js"></script> -->
-    <script src="assets/js/dynamic-controls.js"></script>
-    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/header-mobile-first.js"></script>
+    <!-- <script src="assets/js/dynamic-controls.js"></script> -->
+    <!-- <script src="assets/js/mobile-menu.js"></script> -->
     <script src="assets/js/floating-button.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/carousel.js"></script>
