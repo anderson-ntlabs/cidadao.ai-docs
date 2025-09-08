@@ -437,6 +437,38 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Cidadão.AI - Inicializado com sucesso!');
 });
 
+// ===== FUNÇÕES DE URL E IDIOMA =====
+function getLanguageFromURL() {
+    const path = window.location.pathname;
+    if (path.includes('/en')) {
+        return 'en-US';
+    } else if (path.includes('/pt')) {
+        return 'pt-BR';
+    }
+    return null;
+}
+
+function updateURLWithLanguage(lang) {
+    const currentPath = window.location.pathname;
+    const baseUrl = window.location.origin;
+    let newPath;
+    
+    // Remover idioma existente da URL
+    const cleanPath = currentPath.replace(/\/(en|pt)(\/|$)/, '/');
+    
+    // Adicionar novo idioma
+    if (lang === 'en-US') {
+        newPath = '/en' + (cleanPath === '/' ? '' : cleanPath);
+    } else if (lang === 'pt-BR') {
+        newPath = '/pt' + (cleanPath === '/' ? '' : cleanPath);
+    } else {
+        newPath = cleanPath;
+    }
+    
+    // Usar replaceState para não adicionar entrada no histórico
+    window.history.replaceState({}, '', baseUrl + newPath);
+}
+
 // ===== DETECÇÃO DE PREFERÊNCIAS =====
 function detectUserPreferences() {
     // Detectar tema preferido
@@ -447,13 +479,22 @@ function detectUserPreferences() {
         currentTheme = 'dark';
     }
     
-    // Detectar idioma preferido
-    const savedLanguage = localStorage.getItem('cidadao-ai-language');
-    if (savedLanguage) {
-        currentLanguage = savedLanguage;
+    // Detectar idioma pela URL primeiro
+    const urlLang = getLanguageFromURL();
+    if (urlLang) {
+        currentLanguage = urlLang;
+        localStorage.setItem('cidadao-ai-language', currentLanguage);
     } else {
-        const browserLang = navigator.language || navigator.userLanguage;
-        currentLanguage = browserLang.startsWith('pt') ? 'pt-BR' : 'en-US';
+        // Detectar idioma preferido do localStorage
+        const savedLanguage = localStorage.getItem('cidadao-ai-language');
+        if (savedLanguage) {
+            currentLanguage = savedLanguage;
+            // Redirecionar para URL com idioma
+            updateURLWithLanguage(currentLanguage);
+        } else {
+            const browserLang = navigator.language || navigator.userLanguage;
+            currentLanguage = browserLang.startsWith('pt') ? 'pt-BR' : 'en-US';
+        }
     }
 }
 
@@ -487,6 +528,9 @@ function toggleLanguage() {
     currentLanguage = currentLanguage === 'pt-BR' ? 'en-US' : 'pt-BR';
     updateLanguage(currentLanguage);
     localStorage.setItem('cidadao-ai-language', currentLanguage);
+    
+    // Atualizar URL com o novo idioma
+    updateURLWithLanguage(currentLanguage);
 }
 
 function updateLanguage(lang) {

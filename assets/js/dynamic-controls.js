@@ -72,6 +72,9 @@ class DynamicControls {
         this.updateLangButton();
         this.applyLanguage();
         
+        // Atualizar URL com idioma
+        this.updateURLWithLanguage(this.currentLang);
+        
         // Dispatch evento para outros sistemas
         document.dispatchEvent(new CustomEvent('languageChanged', {
             detail: { language: this.currentLang }
@@ -194,9 +197,43 @@ class DynamicControls {
     }
 
     /**
+     * Atualiza URL com o idioma
+     */
+    updateURLWithLanguage(lang) {
+        const currentPath = window.location.pathname;
+        const baseUrl = window.location.origin;
+        let newPath;
+        
+        // Remover idioma existente da URL
+        const cleanPath = currentPath.replace(/\/(en|pt)(\/|$)/, '/');
+        
+        // Adicionar novo idioma
+        if (lang === 'en-US') {
+            newPath = '/en' + (cleanPath === '/' ? '' : cleanPath);
+        } else if (lang === 'pt-BR') {
+            newPath = '/pt' + (cleanPath === '/' ? '' : cleanPath);
+        } else {
+            newPath = cleanPath;
+        }
+        
+        // Usar replaceState para não adicionar entrada no histórico
+        window.history.replaceState({}, '', baseUrl + newPath);
+    }
+
+    /**
      * Detecta preferência do sistema
      */
     detectSystemPreferences() {
+        // Detectar idioma pela URL primeiro
+        const path = window.location.pathname;
+        if (path.includes('/en')) {
+            this.setLanguage('en-US');
+            return;
+        } else if (path.includes('/pt')) {
+            this.setLanguage('pt-BR');
+            return;
+        }
+        
         // Detectar tema do sistema
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             if (!localStorage.getItem('theme')) {
