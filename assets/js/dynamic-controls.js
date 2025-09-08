@@ -238,14 +238,9 @@ class DynamicControls {
             }
         }
         
-        // Detectar idioma do navegador
-        const browserLang = navigator.language || navigator.userLanguage;
+        // Detectar idioma - padrão sempre pt-BR
         if (!localStorage.getItem('language')) {
-            if (browserLang.startsWith('en')) {
-                this.setLanguage('en-US');
-            } else {
-                this.setLanguage('pt-BR');
-            }
+            this.setLanguage('pt-BR');
         }
     }
 

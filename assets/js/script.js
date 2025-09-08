@@ -489,8 +489,9 @@ function detectUserPreferences() {
             // Redirecionar para URL com idioma
             updateURLWithLanguage(currentLanguage);
         } else {
-            const browserLang = navigator.language || navigator.userLanguage;
-            currentLanguage = browserLang.startsWith('pt') ? 'pt-BR' : 'en-US';
+            // Padrão sempre em português
+            currentLanguage = 'pt-BR';
+            localStorage.setItem('cidadao-ai-language', currentLanguage);
         }
     }
 }
