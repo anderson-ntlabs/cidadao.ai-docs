@@ -11,22 +11,28 @@
     --hamburger-size: 24px;
     --z-header: 1000;
     --z-menu: 999;
+    --brazil-gradient: linear-gradient(135deg, #16a34a, #0ea5e9);
 }
 
-/* Ensure body has proper padding */
+/* Ensure body has proper padding - mobile first */
 body {
-    padding-top: var(--header-height) !important;
+    padding-top: var(--header-height);
 }
 
-/* Mobile specific fix */
+/* Prevent horizontal scroll on mobile */
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
     .site-header {
-        height: 64px !important;
-        max-height: 64px !important;
+        height: var(--header-height);
+        width: 100%;
     }
     
     body {
-        padding-top: 64px !important;
+        padding-top: var(--header-height);
     }
 }
 
@@ -36,16 +42,14 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100%;
     height: var(--header-height);
-    max-height: var(--header-height);
     background: var(--bg-primary, #ffffff);
     border-bottom: 1px solid var(--border, #e5e7eb);
     z-index: var(--z-header);
-    transition: all var(--menu-transition);
+    transition: background-color var(--menu-transition);
     /* Ensure header is visible */
     display: block;
-    overflow: hidden;
 }
 
 /* Navigation Bar */
@@ -74,8 +78,9 @@ body {
     text-decoration: none;
     color: var(--text-primary, #111827);
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     transition: opacity var(--menu-transition);
+    flex-shrink: 0;
 }
 
 .logo:hover {
@@ -83,13 +88,14 @@ body {
 }
 
 .logo-icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .logo-text {
-    font-size: 1.25rem;
-    background: var(--brazil-gradient);
+    font-size: 1.125rem;
+    background: var(--brazil-gradient, linear-gradient(135deg, #16a34a, #0ea5e9));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -108,6 +114,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: all var(--menu-transition);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle:hover {
@@ -170,15 +177,18 @@ body {
 .nav-menu {
     position: fixed;
     top: var(--header-height);
-    left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100vw;
     height: calc(100vh - var(--header-height));
     background: var(--bg-primary);
     border-top: 1px solid var(--border);
     transform: translateX(100%);
     transition: transform var(--menu-transition);
     overflow-y: auto;
+    overflow-x: hidden;
     z-index: var(--z-menu);
+    -webkit-overflow-scrolling: touch;
 }
 
 .nav-menu[aria-hidden="false"] {
@@ -188,6 +198,9 @@ body {
 /* Prevent body scroll when menu open */
 body.menu-open {
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
 }
 
 /* Navigation Actions */
