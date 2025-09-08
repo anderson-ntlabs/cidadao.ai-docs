@@ -170,8 +170,8 @@ class MobileOptimizer {
     setupMobileNavigation() {
         if (!this.isMobile) return;
 
-        // Add mobile navigation toggle if needed
-        this.createMobileMenu();
+        // Disabled - using header-mobile-first.js instead
+        // this.createMobileMenu();
     }
 
     // Create mobile menu toggle

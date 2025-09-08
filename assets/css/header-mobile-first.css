@@ -42,13 +42,13 @@ body {
         padding: 0 0.75rem;
     }
     
-    /* Show only logo and hamburger on mobile */
-    .nav-actions,
-    .nav-controls {
+    /* Hide navigation items when menu is closed */
+    .nav-menu[aria-hidden="true"] .nav-actions,
+    .nav-menu[aria-hidden="true"] .nav-controls {
         display: none;
     }
     
-    /* Show them inside the mobile menu */
+    /* Show them when menu is open */
     .nav-menu[aria-hidden="false"] .nav-actions,
     .nav-menu[aria-hidden="false"] .nav-controls {
         display: block;
@@ -339,7 +339,7 @@ body.menu-open {
     /* Horizontal layout for actions and controls */
     .nav-actions,
     .nav-controls {
-        display: flex;
+        display: flex !important; /* Force display on tablet/desktop */
         flex-direction: row;
         align-items: center;
         gap: 0.75rem;
