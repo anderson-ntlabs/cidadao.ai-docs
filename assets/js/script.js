@@ -522,6 +522,13 @@ function applyTheme(theme) {
 
 // ===== GERENCIAMENTO DE IDIOMA =====
 function toggleLanguage() {
+    // Se dynamic-controls está disponível, usar ele
+    if (window.dynamicControls && typeof window.dynamicControls.toggleLanguage === 'function') {
+        window.dynamicControls.toggleLanguage();
+        return;
+    }
+    
+    // Fallback para lógica local
     currentLanguage = currentLanguage === 'pt-BR' ? 'en-US' : 'pt-BR';
     updateLanguage(currentLanguage);
     localStorage.setItem('cidadao-ai-language', currentLanguage);
@@ -532,15 +539,18 @@ function toggleLanguage() {
 
 function updateLanguage(lang) {
     currentLanguage = lang;
+    console.log(`📖 Atualizando idioma para: ${lang}`);
     
     // Atualizar título da página
-    document.title = translations[lang]['site.title'];
+    document.title = translations[lang]['site.title'] || 'Cidadão.AI - Hub de Documentação';
     
     // Atualizar todos os elementos com data-i18n
     const elements = document.querySelectorAll('[data-i18n]');
+    console.log(`📖 Encontrados ${elements.length} elementos para traduzir`);
+    
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
             const content = translations[lang][key];
             // Se contém HTML, usar innerHTML; senão, textContent
             if (content.includes('<') || content.includes('&')) {
@@ -700,6 +710,15 @@ function initializeEventListeners() {
                 localStorage.setItem('cidadao-ai-language', lang);
             }
         });
+    });
+    
+    // Escutar evento de mudança de idioma do dynamic-controls
+    document.addEventListener('changeLanguage', (event) => {
+        const lang = event.detail.language;
+        if (lang && lang !== currentLanguage) {
+            updateLanguage(lang);
+            localStorage.setItem('cidadao-ai-language', lang);
+        }
     });
     
     // Botões de modal
