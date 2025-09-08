@@ -200,24 +200,19 @@ class DynamicControls {
      * Atualiza URL com o idioma
      */
     updateURLWithLanguage(lang) {
-        const currentPath = window.location.pathname;
-        const baseUrl = window.location.origin;
-        let newPath;
+        const url = new URL(window.location);
         
-        // Remover idioma existente da URL
-        const cleanPath = currentPath.replace(/\/(en|pt)(\/|$)/, '/');
-        
-        // Adicionar novo idioma
+        // Atualizar parâmetro de idioma
         if (lang === 'en-US') {
-            newPath = '/en' + (cleanPath === '/' ? '' : cleanPath);
+            url.searchParams.set('lang', 'en');
         } else if (lang === 'pt-BR') {
-            newPath = '/pt' + (cleanPath === '/' ? '' : cleanPath);
+            url.searchParams.set('lang', 'pt');
         } else {
-            newPath = cleanPath;
+            url.searchParams.delete('lang');
         }
         
         // Usar replaceState para não adicionar entrada no histórico
-        window.history.replaceState({}, '', baseUrl + newPath);
+        window.history.replaceState({}, '', url.toString());
     }
 
     /**
@@ -225,11 +220,13 @@ class DynamicControls {
      */
     detectSystemPreferences() {
         // Detectar idioma pela URL primeiro
-        const path = window.location.pathname;
-        if (path.includes('/en')) {
+        const params = new URLSearchParams(window.location.search);
+        const langParam = params.get('lang');
+        
+        if (langParam === 'en') {
             this.setLanguage('en-US');
             return;
-        } else if (path.includes('/pt')) {
+        } else if (langParam === 'pt') {
             this.setLanguage('pt-BR');
             return;
         }

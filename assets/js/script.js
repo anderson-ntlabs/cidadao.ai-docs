@@ -439,34 +439,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== FUNÇÕES DE URL E IDIOMA =====
 function getLanguageFromURL() {
-    const path = window.location.pathname;
-    if (path.includes('/en')) {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang');
+    
+    if (lang === 'en') {
         return 'en-US';
-    } else if (path.includes('/pt')) {
+    } else if (lang === 'pt') {
         return 'pt-BR';
     }
     return null;
 }
 
 function updateURLWithLanguage(lang) {
-    const currentPath = window.location.pathname;
-    const baseUrl = window.location.origin;
-    let newPath;
+    const url = new URL(window.location);
     
-    // Remover idioma existente da URL
-    const cleanPath = currentPath.replace(/\/(en|pt)(\/|$)/, '/');
-    
-    // Adicionar novo idioma
+    // Atualizar parâmetro de idioma
     if (lang === 'en-US') {
-        newPath = '/en' + (cleanPath === '/' ? '' : cleanPath);
+        url.searchParams.set('lang', 'en');
     } else if (lang === 'pt-BR') {
-        newPath = '/pt' + (cleanPath === '/' ? '' : cleanPath);
+        url.searchParams.set('lang', 'pt');
     } else {
-        newPath = cleanPath;
+        url.searchParams.delete('lang');
     }
     
     // Usar replaceState para não adicionar entrada no histórico
-    window.history.replaceState({}, '', baseUrl + newPath);
+    window.history.replaceState({}, '', url.toString());
 }
 
 // ===== DETECÇÃO DE PREFERÊNCIAS =====
