@@ -62,7 +62,9 @@ button:active, a:active, .btn:active {
 }
 
 /* ===== MOBILE HEADER OPTIMIZATIONS ===== */
+/* COMMENTED OUT - Conflicting with header-mobile-first.css */
 @media (max-width: 768px) {
+/*
     .navbar {
         padding: 0.75rem;
         position: fixed;
@@ -71,10 +73,10 @@ button:active, a:active, .btn:active {
         z-index: 1000;
     }
     
-    /* Add padding to body to account for fixed header */
     body {
         padding-top: 70px;
     }
+*/
     
     .navbar-container {
         display: flex;
