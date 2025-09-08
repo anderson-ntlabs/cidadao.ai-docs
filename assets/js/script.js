@@ -203,6 +203,7 @@ const translations = {
     
     'en-US': {
         'site.title': 'Cidadão.AI — Documentation Hub',
+        'nav.schedule': '📅 Let\'s Talk',
         'nav.theme.light': '☀️ Light',
         'nav.theme.dark': '🌙 Dark',
         'nav.theme.light.short': 'Light',
@@ -309,6 +310,7 @@ const translations = {
         'footer.project.description': 'Multi-agent system for Brazilian public transparency',
         'footer.author.title': 'Developed by',
         'footer.author.role': 'AI Systems Engineer | Computer Science Student',
+        'footer.links.schedule': '📅 Schedule Meeting',
         'footer.links.github': '🔗 GitHub',
         'footer.links.linkedin': '💼 LinkedIn',
         'footer.links.email': '📧 E-mail',
@@ -349,17 +351,33 @@ const translations = {
         'repositories.models.title': 'AI Models',
         'repositories.models.description': 'ML scripts and models',
         
+        // Categories
+        'links.category.applications': 'Applications',
+        'links.category.documentation': 'Documentation & Research',
+        'links.category.system': '🔴 System & Status',
+        'links.category.api': '📚 API & Documentation',
+        
         // Project Links
         'links.webapp.title': 'Web Application',
         'links.webapp.description': 'Cidadão.AI platform in production',
-        'links.api.title': 'Backend API',
-        'links.api.description': 'Hosted on Hugging Face Spaces',
+        'links.api.title': 'API Interactive',
+        'links.api.description': 'Swagger documentation with live tests',
         'links.monitor.title': 'System Monitor',
         'links.monitor.description': 'Real-time backend monitoring',
         'links.technical.title': 'Technical Docs',
-        'links.technical.description': 'Complete backend documentation',
+        'links.technical.description': 'Complete technical documentation',
         'links.research.title': 'Research Notes',
         'links.research.description': 'PDF with project insights',
+        'links.status.title': 'System Status',
+        'links.status.description': 'Real-time status of all agents',
+        'links.health.title': 'Health Check',
+        'links.health.description': 'System health verification',
+        'links.metrics.title': 'Prometheus Metrics',
+        'links.metrics.description': 'Monitoring and performance data',
+        'links.test.title': 'Zumbi Agent Test',
+        'links.test.description': 'Zumbi dos Palmares agent test data',
+        'links.redoc.title': 'API ReDoc',
+        'links.redoc.description': 'Detailed visual documentation',
         
         // API iframe
         'api.iframe.title': 'Cidadão.AI API Documentation',
