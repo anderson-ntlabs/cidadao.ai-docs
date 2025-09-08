@@ -34,15 +34,18 @@
 }
 
 /* ===== CAROUSEL SKELETON ===== */
+/* Removido - carrossel carrega rápido sem necessidade de skeleton */
+/*
 .carousel-skeleton-wrapper {
     width: 100%;
     padding: 2rem 0;
-    display: none; /* Mostrar apenas durante carregamento */
+    display: none;
 }
 
 .carousel-skeleton-wrapper.loading {
     display: block;
 }
+*/
 
 .carousel-skeleton-title {
     height: 2.5rem;

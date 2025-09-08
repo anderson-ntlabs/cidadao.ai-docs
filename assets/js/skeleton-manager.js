@@ -35,8 +35,8 @@ class SkeletonManager {
      * Cria elementos skeleton dinamicamente
      */
     createSkeletonElements() {
-        // Skeleton para carrossel
-        this.createCarouselSkeleton();
+        // Skeleton para carrossel removido - carrega rápido
+        // this.createCarouselSkeleton();
         
         // Skeleton para cards de repositórios
         this.createCardSkeletons();
@@ -166,10 +166,10 @@ class SkeletonManager {
      * Vincula eventos
      */
     bindEvents() {
-        // Quando imagens carregam
-        document.addEventListener('allImagesLoaded', () => {
-            this.markAsReady('carousel');
-        });
+        // Quando imagens carregam - carousel skeleton removido
+        // document.addEventListener('allImagesLoaded', () => {
+        //     this.markAsReady('carousel');
+        // });
         
         // Quando DOM está completamente carregado
         document.addEventListener('DOMContentLoaded', () => {
@@ -184,10 +184,10 @@ class SkeletonManager {
             this.forceRemoveAllSkeletons();
         }, this.loadingTimeout);
         
-        // Quando carrossel está inicializado
-        document.addEventListener('carouselInitialized', () => {
-            this.markAsReady('carousel');
-        });
+        // Quando carrossel está inicializado - carousel skeleton removido
+        // document.addEventListener('carouselInitialized', () => {
+        //     this.markAsReady('carousel');
+        // });
     }
 
     /**
