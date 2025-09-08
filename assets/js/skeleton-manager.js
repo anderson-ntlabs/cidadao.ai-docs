@@ -48,43 +48,11 @@ class SkeletonManager {
     }
 
     /**
-     * Cria skeleton do carrossel
+     * Cria skeleton do carrossel - REMOVIDO
      */
     createCarouselSkeleton() {
-        const carouselSection = document.querySelector('.agents-carousel-wrapper');
-        if (!carouselSection) return;
-
-        const skeletonHTML = `
-            <div class="carousel-skeleton-wrapper loading" id="carousel-skeleton">
-                <div class="carousel-context">
-                    <div class="skeleton carousel-skeleton-title"></div>
-                    <div class="skeleton carousel-skeleton-subtitle"></div>
-                </div>
-                <div class="carousel-skeleton-container">
-                    <div class="carousel-skeleton-track">
-                        ${Array(15).fill().map(() => 
-                            '<div class="skeleton skeleton-agent"></div>'
-                        ).join('')}
-                    </div>
-                </div>
-                <div class="skeleton carousel-skeleton-button"></div>
-            </div>
-        `;
-        
-        carouselSection.insertAdjacentHTML('afterbegin', skeletonHTML);
-        
-        // Ocultar todo o conteúdo real do carrossel
-        const realCarousel = carouselSection.querySelector('.agents-carousel');
-        if (realCarousel) {
-            realCarousel.style.display = 'none';
-        }
-        
-        this.skeletonStates.set('carousel', {
-            skeleton: document.getElementById('carousel-skeleton'),
-            content: realCarousel,
-            startTime: Date.now(),
-            ready: false
-        });
+        // Função completamente desabilitada - carrossel carrega rápido
+        return;
     }
 
     /**
