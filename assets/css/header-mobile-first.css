@@ -318,12 +318,18 @@ body.menu-open {
 
 /* ===== TABLET STYLES (768px+) ===== */
 @media (min-width: 768px) {
+    /* Add gap between logo and menu on desktop */
+    .navbar-container {
+        gap: 2rem !important;
+        justify-content: flex-start !important; /* Override space-between */
+    }
+    
     /* Hide hamburger on tablet/desktop */
     .menu-toggle {
         display: none;
     }
     
-    /* Show nav menu inline */
+    /* Show nav menu inline and push to right */
     .nav-menu {
         position: static;
         height: auto;
@@ -334,6 +340,7 @@ body.menu-open {
         align-items: center;
         gap: 1rem;
         overflow: visible;
+        margin-left: auto !important; /* Push menu to the right */
     }
     
     /* Horizontal layout for actions and controls */
