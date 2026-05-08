@@ -6,11 +6,11 @@
 [![SDG16](https://img.shields.io/badge/SDG-16-orange.svg)](https://sdgs.un.org/goals/goal16)
 [![Open Gov](https://img.shields.io/badge/Open-Government-blue.svg)](https://www.opengovpartnership.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://anderson-ufrj.github.io/cidadao.ai-docs/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://anderson-ntlabs.github.io/cidadao.ai-docs/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-🌐 **[Live Documentation Hub](https://anderson-ufrj.github.io/cidadao.ai-docs/)**
+🌐 **[Live Documentation Hub](https://anderson-ntlabs.github.io/cidadao.ai-docs/)**
 
 ## [English](#english) | [Português](#português)
 
@@ -21,7 +21,7 @@
 ### Quick Start
 ```bash
 # Clone and serve documentation locally
-git clone https://github.com/anderson-ufrj/cidadao.ai-docs
+git clone https://github.com/anderson-ntlabs/cidadao.ai-docs
 cd cidadao.ai-docs
 python -m http.server 8000
 # Open: http://localhost:8000
@@ -35,7 +35,7 @@ python -m http.server 8000
 - Auto-deployed to GitHub Pages
 
 ### Links
-- 🌐 **Documentation Hub**: https://anderson-ufrj.github.io/cidadao.ai-docs/
+- 🌐 **Documentation Hub**: https://anderson-ntlabs.github.io/cidadao.ai-docs/
 
 ---
 
@@ -44,7 +44,7 @@ python -m http.server 8000
 ### Início Rápido
 ```bash
 # Clone e sirva documentação localmente
-git clone https://github.com/anderson-ufrj/cidadao.ai-docs
+git clone https://github.com/anderson-ntlabs/cidadao.ai-docs
 cd cidadao.ai-docs
 python -m http.server 8000
 # Abra: http://localhost:8000
@@ -58,7 +58,7 @@ python -m http.server 8000
 - Auto-deploy para GitHub Pages
 
 ### Links
-- 🌐 **Hub de Documentação**: https://anderson-ufrj.github.io/cidadao.ai-docs/
+- 🌐 **Hub de Documentação**: https://anderson-ntlabs.github.io/cidadao.ai-docs/
 
 ## 🏗️ Architecture
 
@@ -89,7 +89,7 @@ python -m http.server 8000
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/anderson-ufrj/cidadao.ai-docs.git
+   git clone https://github.com/anderson-ntlabs/cidadao.ai-docs.git
    cd cidadao.ai-docs
    ```
 
@@ -180,9 +180,9 @@ The workflow automatically:
 
 | Repository | Description | Status |
 |------------|-------------|--------|
-| [cidadao.ai-frontend](https://github.com/anderson-ufrj/cidadao.ai-frontend) | Next.js web application | ✅ Active |
-| [cidadao.ai-backend](https://github.com/anderson-ufrj/cidadao.ai-backend) | FastAPI backend system | ✅ Active |
-| [cidadao.ia-models](https://github.com/anderson-ufrj/cidadao.ia-models) | ML models and scripts | 🔄 Development |
+| [cidadao.ai-frontend](https://github.com/anderson-ntlabs/cidadao.ai-frontend) | Next.js web application | ✅ Active |
+| [cidadao.ai-backend](https://github.com/anderson-ntlabs/cidadao.ai-backend) | FastAPI backend system | ✅ Active |
+| [cidadao.ia-models](https://github.com/anderson-ntlabs/cidadao.ia-models) | ML models and scripts | 🔄 Development |
 
 ## 🤝 Contributing
 
@@ -213,4 +213,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Anderson Henrique da Silva**  
-📧 andersonhs27@gmail.com | 💻 [GitHub](https://github.com/anderson-ufrj)
+📧 andersonhs27@gmail.com | 💻 [GitHub](https://github.com/anderson-ntlabs)

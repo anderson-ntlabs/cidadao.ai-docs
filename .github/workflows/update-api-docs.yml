@@ -107,4 +107,4 @@ jobs:
       run: |
         echo "🎉 API documentation update completed successfully!"
         echo "📅 Timestamp: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-        echo "🔗 Documentation Hub: https://anderson-ufrj.github.io/cidadao.ai-docs/"
+        echo "🔗 Documentation Hub: https://anderson-ntlabs.github.io/cidadao.ai-docs/"

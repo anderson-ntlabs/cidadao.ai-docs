@@ -258,10 +258,10 @@ function generateUpdatedMetaTags() {
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://anderson-ufrj.github.io/cidadao.ai-docs/">
+<meta property="og:url" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/">
 <meta property="og:title" content="Cidadão.AI — Sistema Multi-Agente de IA para Transparência Pública">
 <meta property="og:description" content="17 agentes de IA brasileiros trabalhando 24/7 para democratizar o acesso aos dados públicos e fortalecer a transparência governamental.">
-<meta property="og:image" content="https://anderson-ufrj.github.io/cidadao.ai-docs/assets/img/og-image.png">
+<meta property="og:image" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Cidadão.AI - Sistema Multi-Agente de IA para Transparência Pública Brasileira">
@@ -273,21 +273,21 @@ function generateUpdatedMetaTags() {
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@cidadao_ai">
 <meta name="twitter:creator" content="@anderson_ufrj">
-<meta name="twitter:url" content="https://anderson-ufrj.github.io/cidadao.ai-docs/">
+<meta name="twitter:url" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/">
 <meta name="twitter:title" content="Cidadão.AI — IA para Transparência Pública">
 <meta name="twitter:description" content="Sistema multi-agente de IA brasileiro para democratizar dados públicos. 17 agentes especializados trabalhando pela transparência governamental.">
-<meta name="twitter:image" content="https://anderson-ufrj.github.io/cidadao.ai-docs/assets/img/twitter-card.png">
+<meta name="twitter:image" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/assets/img/twitter-card.png">
 <meta name="twitter:image:alt" content="Cidadão.AI - Transparência Pública com Inteligência Artificial">
 
 <!-- Contextuais Open Graph -->
 <!-- Para páginas de agentes -->
-<meta property="og:image" content="https://anderson-ufrj.github.io/cidadao.ai-docs/assets/img/og-agents.png" data-context="agents">
+<meta property="og:image" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/assets/img/og-agents.png" data-context="agents">
 
 <!-- Para repositórios -->
-<meta property="og:image" content="https://anderson-ufrj.github.io/cidadao.ai-docs/assets/img/og-repository.png" data-context="repository">
+<meta property="og:image" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/assets/img/og-repository.png" data-context="repository">
 
 <!-- Para API -->
-<meta property="og:image" content="https://anderson-ufrj.github.io/cidadao.ai-docs/assets/img/og-api.png" data-context="api">
+<meta property="og:image" content="https://anderson-ntlabs.github.io/cidadao.ai-docs/assets/img/og-api.png" data-context="api">
 `;
     
     fs.writeFileSync('./enhanced-meta-tags.html', metaTags);

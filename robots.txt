@@ -1,5 +1,5 @@
 # Robots.txt para Cidadão.AI Documentation Hub
-# https://anderson-ufrj.github.io/cidadao.ai-docs/
+# https://anderson-ntlabs.github.io/cidadao.ai-docs/
 
 # Global rules for all robots
 User-agent: *
@@ -71,13 +71,13 @@ User-agent: *gov.br*
 Allow: /
 
 # Sitemaps location
-Sitemap: https://anderson-ufrj.github.io/cidadao.ai-docs/sitemap.xml
+Sitemap: https://anderson-ntlabs.github.io/cidadao.ai-docs/sitemap.xml
 
 # Additional sitemap for API documentation (if needed in the future)
-# Sitemap: https://anderson-ufrj.github.io/cidadao.ai-docs/api-sitemap.xml
+# Sitemap: https://anderson-ntlabs.github.io/cidadao.ai-docs/api-sitemap.xml
 
 # Host preference (canonical domain)
-Host: anderson-ufrj.github.io
+Host: anderson-ntlabs.github.io
 
 # Cache-Control suggestion for bots (some respect this)
 # This is a transparency/government project, so we want fresh content

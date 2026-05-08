@@ -102,7 +102,7 @@ htmlhint *.html             # Validate HTML for security issues
 ### Security Team
 - **Primary Contact**: security@cidadao.ai
 - **Backup Contact**: andersonhs27@gmail.com
-- **GitHub Repository**: https://github.com/anderson-ufrj/cidadao.ai-docs
+- **GitHub Repository**: https://github.com/anderson-ntlabs/cidadao.ai-docs
 - **Response SLA**: 48 hours for security issues
 
 ### Non-Security Issues
