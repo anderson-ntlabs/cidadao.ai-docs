@@ -160,6 +160,8 @@ const translations = {
         'links.monitor.description': 'Monitoramento em tempo real do backend',
         'links.technical.title': 'Docs Técnicas',
         'links.technical.description': 'Documentação completa do backend',
+        'links.test.title': 'Testar os agentes',
+        'links.test.description': 'Chame os agentes ao vivo pelo Swagger',
         'links.research.title': 'Notas de Pesquisa',
         'links.research.description': 'PDF com insights do projeto',
         
@@ -376,8 +378,8 @@ const translations = {
         'links.health.description': 'System health verification',
         'links.metrics.title': 'Prometheus Metrics',
         'links.metrics.description': 'Monitoring and performance data',
-        'links.test.title': 'Zumbi Agent Test',
-        'links.test.description': 'Zumbi dos Palmares agent test data',
+        'links.test.title': 'Try the agents',
+        'links.test.description': 'Call the agents live in Swagger',
         'links.redoc.title': 'API ReDoc',
         'links.redoc.description': 'Detailed visual documentation',
         
