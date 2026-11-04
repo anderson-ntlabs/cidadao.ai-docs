@@ -1,7 +1,7 @@
 // Service Worker para Cidadão.AI Docs
 // Otimizações de cache e performance mobile
 
-const CACHE_NAME = 'cidadao-ai-docs-v1.2';
+const CACHE_NAME = 'cidadao-ai-docs-v1.3';
 const CACHE_URLS = [
     '/',
     '/index.html',
