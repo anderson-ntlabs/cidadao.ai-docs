@@ -19,6 +19,7 @@ const translations = {
         'hero.subtitle': 'Hub Oficial de Documentação',
         'hero.description': 'O Cidadão.AI reúne múltiplas inteligências artificiais brasileiras trabalhando em rede para democratizar o acesso aos dados públicos, fortalecer a transparência e empoderar cada cidadão com informação clara, acessível e auditável.',
         'hero.mission': 'Este é o ponto de encontro entre tecnologia, cidadania e responsabilidade pública.',
+        'hero.docsLink': '📘 Documentação técnica oficial (instalação, arquitetura e API)',
         'hero.btn.manifesto': '📜 Manifesto',
         'hero.btn.system': '🤖 Entenda o Sistema',
         
@@ -154,7 +155,7 @@ const translations = {
         'links.webapp.title': 'Aplicação Web',
         'links.webapp.description': 'Plataforma Cidadão.AI em produção',
         'links.api.title': 'API Backend',
-        'links.api.description': 'Hospedado no Hugging Face Spaces',
+        'links.api.description': 'Documentação Swagger com testes ao vivo',
         'links.monitor.title': 'Monitor do Sistema',
         'links.monitor.description': 'Monitoramento em tempo real do backend',
         'links.technical.title': 'Docs Técnicas',
@@ -219,6 +220,7 @@ const translations = {
         'hero.subtitle': 'Official Documentation Hub',
         'hero.description': 'Cidadão.AI brings together multiple Brazilian artificial intelligences working in a network to democratize access to public data, strengthen transparency and empower every citizen with clear, accessible and auditable information.',
         'hero.mission': 'This is the meeting point between technology, citizenship and public responsibility.',
+        'hero.docsLink': '📘 Official technical documentation (installation, architecture and API)',
         'hero.btn.manifesto': '📜 Manifesto',
         'hero.btn.system': '🤖 Understand the System',
         
