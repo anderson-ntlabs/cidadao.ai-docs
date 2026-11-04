@@ -32,7 +32,7 @@ jobs:
           --max-time 60 \
           --retry 3 \
           --retry-delay 5 \
-          "https://neural-thinker-cidadao-ai-backend.hf.space/openapi.json"
+          "https://cidadao-api-production.up.railway.app/openapi.json"
         
         # Validate downloaded file
         if [ -f openapi.json.new ] && [ -s openapi.json.new ]; then

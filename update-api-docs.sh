@@ -6,7 +6,7 @@
 echo "🔄 Updating Cidadão.AI API documentation..."
 
 # API endpoint for OpenAPI spec
-API_URL="https://neural-thinker-cidadao-ai-backend.hf.space/openapi.json"
+API_URL="https://cidadao-api-production.up.railway.app/openapi.json"
 
 # Download the latest OpenAPI spec
 echo "📥 Downloading OpenAPI spec from: $API_URL"
